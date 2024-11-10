@@ -14,4 +14,15 @@ async function getUsers() {
     }
 }
 
+function showUsers(data){
+    box.innerHTML = data.map((item)=>{
+        return `
+        <div class="card">
+            <img src="${item.image}"/>
+            <h4>${item.firstName} ${item.lastName}</h4>
+        </div>
+        `
+    })
+}
+
 getUsers()
