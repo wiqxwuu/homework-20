@@ -6,6 +6,7 @@ async function getUsers() {
         const res = await fetch(API)
         const data = await res.json()
 
+        showUsers(data.users)
         console.log(data);
         
     } catch (error) {
@@ -22,7 +23,7 @@ function showUsers(data){
             <h4>${item.firstName} ${item.lastName}</h4>
         </div>
         `
-    })
+    }).join('')
 }
 
 getUsers()
